@@ -1,7 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 
-const pages = ['index.html','present.html','privacy.html'];
+const pages = ['index.html','present.html','privacy.html','demo.html'];
 const errors = [];
 for (const name of pages) {
   if (!fs.existsSync(name)) { errors.push('Missing '+name); continue; }
