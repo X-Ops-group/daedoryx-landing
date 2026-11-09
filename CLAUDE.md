@@ -6,6 +6,8 @@ Claude Code and OpenCode may work in parallel only on separate files/branches an
 
 Use the static site architecture already present. Do not replace it with a heavier framework unless a specific, documented requirement justifies that decision.
 
+Marketing must consistently communicate security for both the enterprise and its agentic workforce. A hypothetical control explorer is not proof of threat detection or runtime enforcement.
+
 The C-suite economic simulator is a *scenario engine*, not evidence of realized DAEDORYX value. Its source of truth is `model.mjs`. Add or update tests when changing its formulas.
 
 UI work should preserve the DAEDORYX identity: dark navy surfaces, cyan and violet light, architecture-oriented visualization, clear executive copy, accessible interactive elements, and keyboard-operable event mode.
