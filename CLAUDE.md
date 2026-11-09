@@ -14,4 +14,6 @@ UI work should preserve the DAEDORYX identity: dark navy surfaces, cyan and viol
 
 Do not invent production APIs, email addresses, company addresses, subscription prices, adoption metrics, audit certifications, investors, or customer outcomes.
 
-Run `node --test tests/*.test.mjs` and `node scripts/validate-site.mjs` before proposing a PR. Explicitly report any validation that could not be run.
+The public demo uses `demo-policy.js` for auditable deterministic scenarios; it must not be presented as model-based attack detection or real policy enforcement. Preserve distinct identity, scoped tool grants, SoD, egress, production approval and budget controls.
+
+Run `npm run check` and `npm run offline`, including `tests/demo-policy.test.mjs`, before proposing a PR.

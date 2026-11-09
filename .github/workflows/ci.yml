@@ -19,6 +19,8 @@ jobs:
         run: |
           node --check model.mjs
           node --check app.mjs
+          node --check demo-policy.js
+          node --check demo.js
           node --check security.mjs
           node --check present.mjs
           node --check scripts/validate-site.mjs
@@ -34,6 +36,11 @@ jobs:
           grep -q 'securityExplorerUpdate' offline/daedoryx-landing-offline.html
           grep -q 'data-slide="9"' offline/daedoryx-presentation-offline.html
           if grep -q 'src="security.mjs"' offline/daedoryx-landing-offline.html; then exit 1; fi
+      - name: Assert interactive offline demo is bundled
+        run: |
+          test -s offline/daedoryx-lab-offline.html
+          grep -q 'SIMULATED' offline/daedoryx-lab-offline.html
+          if grep -q 'src="demo.js"' offline/daedoryx-lab-offline.html; then exit 1; fi
       - name: Upload offline event package
         uses: actions/upload-artifact@v4
         with:

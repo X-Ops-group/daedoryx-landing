@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#070b14">
+  <meta name="robots" content="noindex,nofollow">
+  <meta name="description" content="DAEDORYX interactive demo: test illustrative security decisions for enterprise operations and autonomous AI agents in an offline-safe simulated sandbox.">
+  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+  <link rel="stylesheet" href="demo.css">
+  <title>DAEDORYX — Interactive Security Experience Lab</title>
+  <script src="demo-policy.js" defer></script>
+  <script src="demo.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#lab">Skip to interactive lab</a>
+  <div class="ambient ambient-a" aria-hidden="true"></div><div class="ambient ambient-b" aria-hidden="true"></div>
+  <header class="topbar">
+    <a href="index.html" class="brand" aria-label="DAEDORYX home">
+      <span class="mark" aria-hidden="true"><svg viewBox="0 0 40 40" fill="none"><path d="M20 2.5 36 11.5v17L20 37.5 4 28.5v-17L20 2.5Z" stroke="currentColor" stroke-width="1.5"/><path d="M20 10 29 15v10l-9 5-9-5V15l9-5ZM20 10v20M11 15l18 10m0-10L11 25" stroke="currentColor" stroke-width="1.15"/><circle cx="20" cy="20" r="3" fill="currentColor"/></svg></span>
+      DAEDORYX<span class="brand-point">.</span>
+    </a>
+    <span class="header-divider" aria-hidden="true"></span><span class="header-product">EXPERIENCE LAB <span class="tiny-version">/ ALPHA 01</span></span>
+    <div class="header-spacer"></div>
+    <span class="simulation-flag"><i aria-hidden="true"></i> SIMULATED — NO LIVE SYSTEMS</span>
+    <button id="stage-toggle" class="top-action" type="button" aria-pressed="false" title="Switch between interactive and projector layout">STAGE MODE <span aria-hidden="true">↗</span></button>
+    <a href="present.html" class="top-action secondary">EVENT DECK <span aria-hidden="true">↗</span></a>
+  </header>
+
+  <main id="lab">
+    <section class="hero">
+      <div>
+        <div class="eyebrow"><span class="eyebrow-dash"></span> SECURITY × AUTONOMOUS OPERATIONS <span class="ref-id">/ LAB-001</span></div>
+        <h1>Give agents power.<br><em>Keep the authority.</em></h1>
+        <p class="lead">Run a business operation. Challenge an agent. Watch identity, policy, approvals and audit evidence decide what happens <strong>before a tool can act.</strong></p>
+      </div>
+      <div class="hero-side">
+        <div class="hero-side-number" id="hero-runs">00</div>
+        <div class="hero-side-caption">SANDBOX EVALUATIONS <span>THIS SESSION</span></div>
+        <span class="hero-side-footer">RULE-BASED MODEL · NO EXTERNAL EXECUTION</span>
+      </div>
+    </section>
+
+    <section class="metric-row" aria-label="Session-only sandbox metrics">
+      <article class="metric"><span class="metric-icon">◇</span><div><span class="metric-label">REGISTERED DEMO AGENTS</span><strong>04</strong><small>Illustrative identities</small></div></article>
+      <article class="metric"><span class="metric-icon">▦</span><div><span class="metric-label">POLICY CHECKS</span><strong>06</strong><small>Deterministic safeguards</small></div></article>
+      <article class="metric"><span class="metric-icon">◉</span><div><span class="metric-label">DECISIONS DENIED</span><strong id="metric-denied">00</strong><small>This session only</small></div></article>
+      <article class="metric"><span class="metric-icon">⌘</span><div><span class="metric-label">APPROVALS REQUESTED</span><strong id="metric-reviews">00</strong><small>This session only</small></div></article>
+    </section>
+
+    <section class="security-planes" aria-label="DAEDORYX's two security domains">
+      <div class="plane"><span class="plane-count">01 / ENTERPRISE SECURITY</span><strong>Protect business operations.</strong><span>Production change control · sensitive data boundaries · financial authority</span><div class="plane-glyph" aria-hidden="true">⬡</div></div>
+      <div class="plane"><span class="plane-count">02 / AGENT SECURITY</span><strong>Protect the AI workforce.</strong><span>Non-human identity · scoped tool grants · separation of duties</span><div class="plane-glyph" aria-hidden="true">◇</div></div>
+    </section>
+
+    <div class="section-title-row" id="workbench-heading"><div><span class="section-kicker">02 / THE INTERACTIVE EXPERIENCE</span><h2>Mission control <em>is yours.</em></h2></div><div class="section-meta"><span class="online-dot"></span> OFFLINE READY <span class="meta-sep">/</span> ZERO PRODUCTION ACCESS</div></div>
+
+    <div class="lab-layout">
+      <aside class="scenario-panel panel" aria-labelledby="scenario-heading">
+        <div class="panel-eyebrow"><span>SCENARIO LIBRARY</span><span>06 CASES</span></div>
+        <h3 id="scenario-heading">Choose an operation</h3>
+        <p class="muted">Select a real-world decision pattern to test against illustrative policies.</p>
+        <div id="scenario-list" class="scenario-list" role="group" aria-label="Choose a scenario"></div>
+        <div class="rail-note"><span aria-hidden="true">◎</span><p><strong>Audience challenge:</strong> Modify the agent, target or destination. Can you find an action this policy should refuse?</p></div>
+      </aside>
+
+      <section class="workbench panel" aria-labelledby="workbench-title">
+        <div class="workbench-head">
+          <div><span class="workbench-kicker">ACTIVE EXECUTION REQUEST <span id="request-id">/ REQ-001</span></span><h3 id="workbench-title">A normal autonomous release</h3><p id="scenario-copy" class="muted">A scoped delivery agent deploys a signed build to staging.</p></div>
+          <span class="status-pill status-idle" id="decision-pill">READY</span>
+        </div>
+        <div class="flow-label"><span>OPERATION PATH</span><span id="flow-caption">AWAITING EVALUATION</span></div>
+        <div class="flowline" aria-label="Simulated request lifecycle">
+          <div class="flow-node" data-flow="request"><span class="flow-no">01</span><span class="flow-symbol">◎</span><strong>INTENT</strong><small>Structured request</small></div>
+          <div class="flow-connector" aria-hidden="true"></div>
+          <div class="flow-node" data-flow="identity"><span class="flow-no">02</span><span class="flow-symbol">⬡</span><strong>IDENTITY</strong><small>Agent credentials</small></div>
+          <div class="flow-connector" aria-hidden="true"></div>
+          <div class="flow-node" data-flow="policy"><span class="flow-no">03</span><span class="flow-symbol">◇</span><strong>POLICY</strong><small>Authorization gate</small></div>
+          <div class="flow-connector" aria-hidden="true"></div>
+          <div class="flow-node" data-flow="tool"><span class="flow-no">04</span><span class="flow-symbol">↗</span><strong>TOOL GATE</strong><small>No real execution</small></div>
+          <div class="flow-connector" aria-hidden="true"></div>
+          <div class="flow-node" data-flow="evidence"><span class="flow-no">05</span><span class="flow-symbol">▦</span><strong>EVIDENCE</strong><small>Local audit log</small></div>
+        </div>
+
+        <div class="control-title"><span>SIMULATED REQUEST PARAMETERS</span><span>EDIT BEFORE EXECUTION</span></div>
+        <form id="request-form" class="request-controls" novalidate>
+          <label>ACTING AGENT<select id="agent-select" name="agent">
+            <option value="delivery">NOVA / Delivery</option><option value="security">AEGIS / Security</option><option value="analyst">LYRA / Analytics</option><option value="finance">ATLAS / Finance</option><option value="unknown">UNKNOWN / Unregistered</option>
+          </select></label>
+          <label>REQUESTED ACTION<select id="action-select" name="action">
+            <option value="read">Read internal status</option><option value="deploy">Deploy application</option><option value="merge">Merge code change</option><option value="export">Export customer records</option><option value="contain">Contain suspicious identity</option><option value="purchase">Approve supplier order</option>
+          </select></label>
+          <label>TARGET ENVIRONMENT<select id="environment-select" name="environment"><option value="staging">Staging / non-production</option><option value="production">Production</option></select></label>
+          <label>DESTINATION<select id="destination-select" name="destination"><option value="internal">Internal</option><option value="external">External / untrusted</option></select></label>
+          <label>ORDER AMOUNT (USD)<input type="number" id="amount-input" name="amount" min="0" max="1000000000" step="100" value="0" inputmode="numeric"></label>
+          <div class="options-box"><label class="check-label"><input type="checkbox" id="self-review"> Same agent authors & approves</label><label class="check-label"><input type="checkbox" id="untrusted-input"> Untrusted prompt is present</label></div>
+        </form>
+        <div class="action-bar"><button type="button" id="run-button" class="button-primary"><span class="button-spark" aria-hidden="true">▶</span> EVALUATE REQUEST <span class="button-arrow" aria-hidden="true">↗</span></button><button type="button" id="reset-case" class="button-outline">RESET CASE</button><span class="shortcut">ENTER <span>TO RUN</span></span></div>
+
+        <div id="result" class="result result-idle" aria-live="polite" aria-atomic="true">
+          <div class="result-glyph" id="result-glyph">◇</div><div class="result-copy"><span class="result-overline">AUTHORIZATION DECISION</span><h4 id="result-heading">Ready to evaluate</h4><p id="result-reason">Nothing has been executed. Select a scenario or modify parameters, then evaluate.</p><p class="result-extra" id="result-extra" hidden></p></div>
+        </div>
+        <div class="approval-panel" id="approval-panel" hidden><div><strong>Human authorization checkpoint</strong><p>This is a staged decision. Buttons record an illustrative approval or rejection; they cannot authorize real tools.</p></div><div class="approval-buttons"><button type="button" id="approve-button" class="button-approve">SIMULATE APPROVAL</button><button type="button" id="reject-button" class="button-reject">REJECT</button></div></div>
+        <div class="policy-head"><h4>Policy decision trace</h4><span id="check-summary">0 / 6 CHECKS EVALUATED</span></div>
+        <div id="policy-checks" class="policy-checks" aria-label="Policy evaluations"><p class="empty-state">Run a request to view all six rule outcomes.</p></div>
+      </section>
+
+      <aside class="audit-panel panel" aria-labelledby="audit-title">
+        <div class="panel-eyebrow"><span>OBSERVABILITY</span><span>LOCAL SESSION</span></div>
+        <h3 id="audit-title">Audit evidence</h3>
+        <p class="muted">Every simulated decision is recorded in this browser tab. No enterprise backend is involved.</p>
+        <div class="audit-total"><span>DECISION EVENTS</span><strong id="audit-count">00</strong><span>IN-MEMORY</span></div>
+        <div class="audit-list" id="audit-list" aria-live="polite"><div class="audit-empty"><span class="empty-orbit">◎</span><strong>No decisions yet</strong><small>Evaluations appear here as they happen.</small></div></div>
+        <div class="audit-actions"><button id="download-audit" type="button" class="audit-button" disabled>EXPORT JSON <span aria-hidden="true">↓</span></button><button id="clear-audit" type="button" class="audit-button secondary" disabled>CLEAR</button></div>
+        <div class="data-note">SESSION DATA ONLY <span class="data-note-dot">●</span> EXPORT FILES ARE MARKED AS SIMULATED</div>
+      </aside>
+    </div>
+
+    <section class="executive-section" aria-labelledby="lens-title">
+      <div class="section-title-row"><div><span class="section-kicker">03 / BUSINESS PERSPECTIVES</span><h2>One operation. <em>Five conversations.</em></h2></div><span class="section-meta">SELECT YOUR ROLE</span></div>
+      <div class="lens-layout">
+        <div class="lens-tabs" role="tablist" aria-label="Executive perspective"><button type="button" role="tab" aria-selected="true" data-lens="CEO">CEO</button><button type="button" role="tab" aria-selected="false" data-lens="CFO" tabindex="-1">CFO</button><button type="button" role="tab" aria-selected="false" data-lens="CIO" tabindex="-1">CIO</button><button type="button" role="tab" aria-selected="false" data-lens="CTO" tabindex="-1">CTO</button><button type="button" role="tab" aria-selected="false" data-lens="CISO" tabindex="-1">CISO</button></div>
+        <div class="lens-copy" id="lens-panel" role="tabpanel" aria-label="Executive interpretation"><span id="lens-label">CEO / STRATEGIC CONTROL</span><strong id="lens-headline">Delegate operations without delegating unrestricted authority.</strong><p id="lens-description">The demo illustrates how a single operating architecture can coordinate autonomous work while preserving explicit decision boundaries. No productivity or financial outcomes are claimed.</p></div>
+        <div class="lens-aside">THE SYSTEM OF RECORD IS THE <em>DECISION</em> — NOT JUST THE AI RESPONSE.</div>
+      </div>
+    </section>
+    <footer class="footer"><span>DAEDORYX / EXPERIENCE LAB / 2026</span><span>ILLUSTRATIVE POLICY MODEL · SYNTHETIC AGENT IDENTITIES · NO LIVE SECURITY DETECTION · NO EXTERNAL ACTIONS</span><a href="index.html">BACK TO PLATFORM ↗</a></footer>
+  </main>
+</body>
+</html>
