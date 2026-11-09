@@ -15,3 +15,11 @@ Before commercial publication:
 - Obtain an independent PR review. No agent should self-approve its own implementation.
 
 **The scenario calculator is an explanatory model only**, not published evidence of DAEDORYX or customer outcomes.
+
+## Security-specific commercial claim gate
+
+- Validate product inventory and evidence before describing DAEDORYX as a deployed enterprise cybersecurity tool, SOC platform, SIEM, EDR, SOAR or agent security enforcement solution.
+- Differentiate orchestrating approved defensive workflows from actually detecting threats, inspecting network traffic or enforcing production policies.
+- Demonstrate credential lifecycle, non-human identity, tool authorization, MCP/A2A trust boundaries, prompt-injection containment, data-egress controls and audit/kill-switch behavior before making effectiveness claims.
+- Independent security review must validate that demonstration controls operate on a real execution path, not only in the UI.
+- All six threat scenarios on the marketing site are **illustrative**, not observed incidents or customer telemetry.
