@@ -1,14 +1,16 @@
 # DAEDORYX Event Presenter Guide
 
-Open `present.html` from a hosted preview or local HTTP server. Eight slides are available:
+Open `present.html` from a hosted preview or local HTTP server. Ten slides are available:
 1. The vision
 2. Enterprise AI problem
 3. Agentic operating architecture
 4. Live executive scenario model
 5. CEO/CFO/CIO/CTO/CISO perspectives
-6. Five conceptual governance stages
-7. Cloud/Hybrid/Private deployment propositions
-8. Closing call to action
+6. Enterprise security: coordination of risk and authorized response
+7. Agent security: non-human identities, tools, data and execution boundaries
+8. Five conceptual governance stages
+9. Cloud/Hybrid/Private deployment propositions
+10. Closing call to action
 
 ## Controls
 - Left/right arrows or Page Up/Page Down: move between slides.
@@ -25,7 +27,7 @@ Open `present.html` from a hosted preview or local HTTP server. Eight slides are
 - Ask the audience to supply realistic workload and cost assumptions.
 - Change sliders in real time.
 - Explain that returned hours represent potential capacity, not realized savings.
-- Use the governance slide to distinguish authorization from generated recommendations.
+- Explain both domains: enterprise cyber defense and securing the agents that operate company resources. The example threat explorer on the landing describes hypothetical controls, not live response. Use the governance slide to distinguish authorization from recommendations.
 - State which deployment features are proposals pending technical validation.
 - Direct leads to a human-operated intake workflow; no website lead endpoint is currently configured.
 
