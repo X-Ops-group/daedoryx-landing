@@ -25,3 +25,12 @@ jobs:
         run: node --test tests/*.test.mjs
       - name: Check page integrity
         run: node scripts/validate-site.mjs
+      - name: Build offline event package
+        run: node scripts/build-offline.mjs
+      - name: Upload offline event package
+        uses: actions/upload-artifact@v4
+        with:
+          name: daedoryx-event-offline
+          path: offline/
+          retention-days: 30
+          if-no-files-found: error
