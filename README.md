@@ -17,7 +17,9 @@ A static, animated marketing website and an interactive, ten-slide executive eve
 - Two-language headline/section switching (English default, Spanish option). Deep technical copy is currently English.
 - Policy-first architectural narrative, realistic deployment positioning, accessible motion reduction, and visible pre-launch restrictions.
 - Contact enquiry generator: **local clipboard only**, no backend API, no claim of lead capture.
-- No production UI, no backend, no JavaScript dependencies.
+- **Interactive product lab:** six executable synthetic scenarios, deterministic authorization checks, human-approval simulation, live session audit and JSON export for audience participation.
+- Projector-friendly stage mode (`demo.html?mode=stage`), executive perspectives and one-click offline bundling.
+- No production integrations, no backend and no third-party JavaScript dependencies.
 
 ## Local run
 
@@ -31,13 +33,15 @@ Open:
 
 - Landing: http://localhost:8080/
 - Presentation: http://localhost:8080/present.html
+- Interactive lab: http://localhost:8080/demo.html
+- Projector lab: http://localhost:8080/demo.html?mode=stage
 - Scenario presentation directly: http://localhost:8080/present.html#slide-4
 
 **Note:** ES modules need an HTTP server; direct `file://` loading may not work in all browsers.
 
 ## Zero-server offline event package
 
-Run `npm run offline` to generate two standalone HTML files in `offline/`, plus supporting local assets. Double-click `daedoryx-landing-offline.html` or `daedoryx-presentation-offline.html`; unlike the source files they run directly from `file://` without hosting or internet. GitHub Actions builds and uploads the same offline event package as a downloadable workflow artifact, valid for 30 days.
+Run `npm run offline` to generate three standalone HTML files in `offline/`, plus supporting local assets. Double-click `daedoryx-landing-offline.html`, `daedoryx-presentation-offline.html`, or `daedoryx-lab-offline.html`; unlike the source files they run directly from `file://` without hosting or internet. GitHub Actions builds and uploads the same offline event package as a downloadable workflow artifact, valid for 30 days.
 
 ## Verification
 
@@ -55,7 +59,7 @@ Visit the Executive Impact Studio, adjust operational assumptions, and use **Pre
 
 On the deck use arrow keys, Page Up/Page Down, Home/End, Space for next, **F** for fullscreen and **P** for print / save as PDF. Sliders on slide 4 continue to update CEO/CFO/CIO/CTO scenario outputs on slide 5.
 
-Print the presentation using browser landscape mode, or prepare a local HTTP-server fallback if the venue has unreliable internet. See [Presenter Guide](docs/event-presenter-guide.md).
+Print the presentation using browser landscape mode, or prepare a local HTTP-server fallback if the venue has unreliable internet. See [Presenter Guide](docs/event-presenter-guide.md) and [Interactive Lab Runbook](docs/demo-experience-runbook.md).
 
 ## Economic model
 
@@ -68,6 +72,8 @@ See [scenario methodology](docs/scenario-methodology.md) for reproducible formul
 | Path | Purpose |
 | --- | --- |
 | `index.html` | Main B2B landing and impact studio |
+| `demo.html` / `demo.css` / `demo.js` | Self-service enterprise and agent security experience lab |
+| `demo-policy.js` | Deterministic sandbox-only authorization engine |
 | `styles.css` | Design system, layout and responsive behavior |
 | `app.mjs` | Landing interactions, language toggle, clipboard-only enquiry |
 | `security.mjs` | Dual-domain threat examples and bilingual interactive security-control explorer |
@@ -84,7 +90,7 @@ See [scenario methodology](docs/scenario-methodology.md) for reproducible formul
 
 Any static hosting service can serve these files from its public root. Configure HTTPS, correct content types and equivalent response headers to `_headers` at the hosting edge; not all providers (notably GitHub Pages) interpret that file. This preview deliberately declares `noindex` and `robots.txt` disallows search engines.
 
-There is **no configured public production deployment**, and no server-side lead intake. Before commercial publication complete the [publication checklist](docs/publication-gates.md), including legal operator, privacy, product evidence, independent QA, and contact integration.
+There is **no configured public production deployment**, and no server-side lead intake. The lab runs entirely within the browser: agent identities, policy decisions, incidents and metrics are **simulated**; it does not call a model or real corporate tool. Before commercial publication complete the [publication checklist](docs/publication-gates.md), including legal operator, privacy, product evidence, independent QA, and contact integration.
 
 ## Contribution standards
 
