@@ -35,3 +35,6 @@ Open `present.html` from a hosted preview or local HTTP server. Eight slides are
 - Test offline by serving this directory from a laptop (fonts will fall back to installed fonts if unavailable).
 - Test print/PDF as a fallback.
 - Keep a controlled, approved prospect contact channel outside the prototype until the lead intake backend is integrated.
+
+## Offline, single-file build
+Run `node scripts/build-offline.mjs` (or download `daedoryx-event-offline` from the latest successful PR workflow). Extract the package and open `offline/daedoryx-presentation-offline.html` directly; the script and styles are bundled into the HTML, so no HTTP server or internet connection is required. Keep the accompanying files together for navigation and favicon assets.
