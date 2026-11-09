@@ -36,12 +36,12 @@ const lenses = {
     metricLabel: 'POTENTIAL TIME RELEASED'
   },
   CISO: {
-    label: 'CISO / GOVERNANCE ARCHITECTURE',
-    title: 'Put policy in the execution path.',
-    body: 'Examine five proposed governance boundaries: identity, policy evaluation, approval, constrained execution, and evidence. This is a design model, not a security certification.',
-    metric: () => '05',
-    caption: 'Reference control stages, not audited product controls',
-    metricLabel: 'GOVERNANCE DESIGN STAGES'
+    label: 'CISO / DUAL SECURITY ARCHITECTURE',
+    title: 'Protect the company and its AI workforce.',
+    body: 'Enterprise operations and autonomous agents present distinct attack surfaces. Both require identity, enforceable authority, containment, monitoring and response.',
+    metric: () => '02',
+    caption: 'Enterprise security + agent security; conceptual domains',
+    metricLabel: 'SECURITY DOMAINS'
   }
 };
 const phases = [
@@ -54,20 +54,33 @@ const phases = [
 let activeLens = 'CEO';
 let currentLang = 'en';
 const spanish = {
-  'nav.platform': 'Plataforma', 'nav.impact': 'Impacto', 'nav.solutions': 'Soluciones',
-  'nav.governance': 'Gobernanza', 'nav.deploy': 'Despliegue', 'nav.present': 'Presentar',
+  'nav.platform': 'Plataforma', 'nav.security': 'Seguridad', 'nav.impact': 'Impacto', 'nav.solutions': 'Soluciones',
+  'nav.governance': 'Controles', 'nav.deploy': 'Despliegue', 'nav.present': 'Presentar',
   'nav.demo': 'Solicitar demo ↗',
-  'hero.eyebrow': 'INTELIGENCIA AGÉNTICA EMPRESARIAL',
+  'hero.eyebrow': 'CIBERSEGURIDAD EMPRESARIAL × INTELIGENCIA AGÉNTICA',
   'hero.line1': 'Autónoma', 'hero.line2': 'por diseño.', 'hero.line3': 'Gobernada', 'hero.line4': 'por defecto.',
-  'hero.desc': 'La capa operativa para la IA empresarial. Orquesta agentes, conecta el conocimiento de la organización e integra políticas en cada ejecución, en la nube o en infraestructura privada.',
-  'hero.cta1': 'Explorar el impacto', 'hero.cta2': 'Modo presentación',
-  'hero.note': 'Un plano de control, no otro chatbot.',
+  'hero.desc': 'Protege a la empresa y a los agentes autónomos que actúan en su nombre. DAEDORYX plantea integrar operaciones de seguridad, orquestación, identidad, políticas y evidencia en una arquitectura.',
+  'hero.security': 'Protege la empresa. Protege a los agentes que la operan.',
+  'hero.cta1': 'Explorar la doble seguridad', 'hero.cta2': 'Modo presentación',
+  'hero.note': 'Ciberdefensa empresarial + ejecución agéntica segura.',
   'hero.illustration': 'Arquitectura conceptual · ilustración, no telemetría real',
   'hero.scroll': 'DESLIZA PARA EXPLORAR',
   'pill.1': 'Orquestar', 'pill.1d': 'Agentes especializados',
   'pill.2': 'Contextualizar', 'pill.2d': 'Conocimiento empresarial',
-  'pill.3': 'Gobernar', 'pill.3d': 'Políticas y aprobaciones',
+  'pill.3': 'Proteger', 'pill.3d': 'Seguridad de la empresa y los agentes',
   'pill.4': 'Observar', 'pill.4d': 'Evidencia de ejecución',
+  'security.title': 'Protege la empresa.<br><em>Protege su fuerza de trabajo de IA.</em>',
+  'security.desc': 'Dos ámbitos relacionados: defender a la empresa del riesgo cibernético y proteger a los agentes autónomos con acceso a sus sistemas.',
+  'security.enterprise.title': 'Proteger la empresa',
+  'security.enterprise.desc': 'Coordinar investigaciones, defensa y remediación autorizada en identidad, nube, infraestructura y sistemas corporativos.',
+  'security.enterprise.action': 'Explorar seguridad empresarial',
+  'security.agents.title': 'Proteger los agentes de IA',
+  'security.agents.desc': 'Tratar cada agente como identidad no humana: limitar sus herramientas, verificar procedencia y conservar trazas de sus acciones.',
+  'security.agents.action': 'Explorar seguridad agéntica',
+  'security.sim': 'ESCENARIOS DE AMENAZAS INTERACTIVOS',
+  'security.principle.title': 'Seguridad por construcción. Responsabilidad por defecto.',
+  'security.principle.body': 'La defensa empresarial y la protección de los agentes convergen en identidad, autorización, ejecución controlada y evidencia. Primero la arquitectura; después verificar capacidades.',
+  'security.principle.cta': 'Explorar controles ↗',
   'platform.title': 'De una IA fragmentada a una <em>inteligencia coordinada.</em>',
   'platform.desc': 'No es otro asistente aislado. Es una arquitectura operativa para que los agentes interpreten, accedan al contexto, pidan autorización y ejecuten trabajo.',
   'impact.title': 'Construye el caso de negocio <em>en tiempo real.</em>',
@@ -76,16 +89,16 @@ const spanish = {
   'impact.tune': 'Ajusta seis supuestos durante la presentación.',
   'solutions.title': 'Una arquitectura. <em>Muchas oportunidades.</em>',
   'solutions.desc': 'Conecta personas, agentes, herramientas y conocimiento organizativo para realizar tareas medibles dentro de límites comprensibles.',
-  'gov.title': 'La autonomía exige <em>límites operativos.</em>',
-  'gov.desc': 'La pregunta ya no es si la IA puede actuar. Es quién autoriza la acción, qué contexto puede utilizar y qué evidencia debe conservarse.',
+  'gov.title': 'La seguridad exige <em>límites verificables.</em>',
+  'gov.desc': 'Protege a la organización del riesgo cibernético y de acciones no autorizadas de sus propios agentes. Define identidad, permisos, aprobación, contención y evidencia antes de ejecutar.',
   'deploy.title': 'Tu infraestructura. <em>Tu modelo operativo.</em>',
   'deploy.desc': 'Diseñada para los requisitos de tu organización. Explora posibles opciones de despliegue en nube, híbrido y privado.',
-  'contact.title': 'El próximo sistema operativo no girará alrededor de aplicaciones. <em>Girará alrededor de la inteligencia.</em>',
-  'contact.desc': 'Trae tu caso de uso. Analizaremos gobernanza, integración y los supuestos de negocio antes de prometer automatización.',
+  'contact.title': 'Tu empresa necesita operaciones inteligentes. <em>Y seguridad para cada acción.</em>',
+  'contact.desc': 'Trae un caso de seguridad empresarial o de agentes. Definiremos controles, integraciones y evidencias antes de prometer resultados.',
   'contact.deck': 'Abrir presentación ejecutiva'
 };
 const originalMarkup = new Map(Array.from(document.querySelectorAll('[data-t]')).map((el) => [el, el.innerHTML]));
-const htmlKeys = new Set(['platform.title','impact.title','solutions.title','gov.title','deploy.title','contact.title']);
+const htmlKeys = new Set(['security.title','platform.title','impact.title','solutions.title','gov.title','deploy.title','contact.title']);
 
 function setLanguage(lang) {
   currentLang = lang === 'es' ? 'es' : 'en';
@@ -101,6 +114,7 @@ function setLanguage(lang) {
   try { localStorage.setItem('daedoryx-language', currentLang); } catch {}
   updatePhase(Number(document.querySelector('.platform-step.active')?.dataset.step ?? 0));
   updateScenario();
+  window.dispatchEvent(new Event('daedoryx:language'));
 }
 
 function updatePhase(index) {
