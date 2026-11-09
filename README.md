@@ -33,6 +33,10 @@ Open:
 
 **Note:** ES modules need an HTTP server; direct `file://` loading may not work in all browsers.
 
+## Zero-server offline event package
+
+Run `npm run offline` to generate two standalone HTML files in `offline/`, plus supporting local assets. Double-click `daedoryx-landing-offline.html` or `daedoryx-presentation-offline.html`; unlike the source files they run directly from `file://` without hosting or internet. GitHub Actions builds and uploads the same offline event package as a downloadable workflow artifact, valid for 30 days.
+
 ## Verification
 
 Requires Node.js 22+; zero `npm install` dependencies.
