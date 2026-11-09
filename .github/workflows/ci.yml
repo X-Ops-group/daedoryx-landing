@@ -21,14 +21,21 @@ jobs:
           node --check app.mjs
           node --check demo-policy.js
           node --check demo.js
+          node --check security.mjs
           node --check present.mjs
           node --check scripts/validate-site.mjs
+          node --check scripts/build-offline.mjs
       - name: Run calculation tests
         run: node --test tests/*.test.mjs
       - name: Check page integrity
         run: node scripts/validate-site.mjs
       - name: Build offline event package
         run: node scripts/build-offline.mjs
+      - name: Assert two security domains and 10 slides are bundled
+        run: |
+          grep -q 'securityExplorerUpdate' offline/daedoryx-landing-offline.html
+          grep -q 'data-slide="9"' offline/daedoryx-presentation-offline.html
+          if grep -q 'src="security.mjs"' offline/daedoryx-landing-offline.html; then exit 1; fi
       - name: Assert interactive offline demo is bundled
         run: |
           test -s offline/daedoryx-lab-offline.html

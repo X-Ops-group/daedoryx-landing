@@ -16,4 +16,4 @@ Do not invent production APIs, email addresses, company addresses, subscription 
 
 The public demo uses `demo-policy.js` for auditable deterministic scenarios; it must not be presented as model-based attack detection or real policy enforcement. Preserve distinct identity, scoped tool grants, SoD, egress, production approval and budget controls.
 
-Run `npm run check` and `npm run offline`, including `tests/demo-policy.test.mjs`, before proposing a PR. Explicitly report any validation that could not be run.
+Run `npm run check` and `npm run offline`, including `tests/demo-policy.test.mjs`, before proposing a PR.

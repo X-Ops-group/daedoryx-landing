@@ -45,7 +45,6 @@ function buildStandalone(page, moduleFile, extraCSS, outputName) {
   return html.length;
 }
 
-
 function buildLabStandalone() {
   let html = read('demo.html');
   const code = read('demo-policy.js') + '\n' + read('demo.js');
