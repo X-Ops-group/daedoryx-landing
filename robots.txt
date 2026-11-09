@@ -1,0 +1,4 @@
+User-agent: *
+Disallow: /
+
+# Preview / pre-publication: enable indexing only after product, legal, and security review.
