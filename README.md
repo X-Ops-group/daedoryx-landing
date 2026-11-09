@@ -61,7 +61,7 @@ Print the presentation using browser landscape mode, or prepare a local HTTP-ser
 
 The default example uses 15,000 work items/month, 18 minutes each, 45% coverage, 35% time reduction, $55/hour, and $150,000/year assumed cost. It illustrates 8,505 annual hours potentially released and $467,775 capacity value. This is **not** DAEDORYX financial performance, a product benchmark, or automatically cashable savings.
 
-See [scenario methodology](docs/scenario-methodology.md) for reproducible formulas and limitations.
+See [scenario methodology](docs/scenario-methodology.md) for reproducible formulas and limitations. The security positioning, risk scenarios, reference controls, and required implementation evidence are documented in the [two-domain security control matrix](docs/security-control-matrix.md).
 
 ## File map
 
