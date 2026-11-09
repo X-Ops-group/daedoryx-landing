@@ -15,6 +15,10 @@ Create a credible, visually distinctive marketing and event-presentation experie
 - Respect keyboard access, reduced motion, readable contrast, and screen-reader semantics.
 - Avoid dependencies for simple behavior. This website is intentionally static and framework-free.
 
+- The demo lab is a **deterministic rule-based simulation**, not a deployed IAM, SOAR, DLP, SIEM or prompt-injection detector. Keep visible simulation labels, require real validation before claims.
+- Approval buttons in the lab must never call live cloud or source-control tools. Bind any simulated approval to the exact reviewed request and invalidate if inputs change.
+- Preserve fully standalone `npm run offline` generation for event resilience. Only synthetic audit output is exportable.
+
 ## Development
 Run the site on a local HTTP server; JavaScript ES modules will not reliably load directly from file://.
 Example: `python3 -m http.server 8080`
