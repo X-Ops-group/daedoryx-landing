@@ -5,6 +5,8 @@ Create a credible, visually distinctive marketing and event-presentation experie
 
 ## Non-negotiables
 - **No fabricated product benchmarks, customers, certifications, savings, uptime, or capabilities.**
+- DAEDORYX's central security proposition spans **enterprise operations security** and **security for autonomous AI agents**. Explain both without implying production feature availability.
+- All website threat paths are illustrative control intentions, not actual security telemetry or deployed mitigations.
 - All performance and ROI numbers must be scenario calculations, clearly labeled as assumptions rather than observed results.
 - Do not publish private HOLOS/DAEDORYX infrastructure details, endpoint addresses, secrets, or internal architecture assets.
 - Do not simulate lead delivery. The current contact interaction copies a brief to the local clipboard and submits nothing.
@@ -31,6 +33,7 @@ node scripts/validate-site.mjs
 - `index.html` — commercial landing, narrative, C-level scenario inputs.
 - `styles.css` — shared design system, accessible responsive styles.
 - `app.mjs` — landing interactions, scenario calculations, language switch, contact brief.
+- `security.mjs` — defensive enterprise and agent-security threat scenario explorer.
 - `model.mjs` — pure reusable scenario engine with tests.
 - `present.html` — eight-slide event-ready presentation.
 - `presentation.css` / `present.mjs` — deck design and keyboard navigation.
