@@ -2,7 +2,7 @@ import { DEFAULT_SCENARIO, calculateScenario, formatMoney, formatInteger, saniti
 
 const $ = (id) => document.getElementById(id);
 const slides = [...document.querySelectorAll('.slide')];
-const names = ['INTRODUCTION','THE PROBLEM','THE SYSTEM','EXECUTIVE MODEL','BOARDROOM PERSPECTIVES','GOVERNANCE','DEPLOYMENT','LET\'S TALK'];
+const names = ['INTRODUCTION','THE PROBLEM','THE SYSTEM','EXECUTIVE MODEL','BOARDROOM PERSPECTIVES','ENTERPRISE SECURITY','AGENT SECURITY','GOVERNANCE','DEPLOYMENT','LET\'S TALK'];
 let active = 0;
 const inputs = ['volume','reduction','coverage'];
 let baseAssumptions = {...DEFAULT_SCENARIO};
