@@ -74,6 +74,66 @@
       <div><span class="strip-index">03 /</span><strong data-t="pill.3">Protect</strong><small data-t="pill.3d">Enterprise & agent security</small></div>
       <div><span class="strip-index">04 /</span><strong data-t="pill.4">Observe</strong><small data-t="pill.4d">Execution evidence</small></div>
     </div></section>
+
+    <section class="section security-section" id="security" aria-labelledby="security-heading">
+      <div class="shell">
+        <div class="section-heading reveal">
+          <span class="section-kicker">01 — THE SECURITY MISSION</span>
+          <div class="heading-row">
+            <h2 id="security-heading" data-t="security.title">Secure the enterprise.<br><em>Secure its AI workforce.</em></h2>
+            <p data-t="security.desc">Two connected security domains: protect the organization from cyber risk, and safeguard the autonomous agents authorized to act across its systems.</p>
+          </div>
+        </div>
+        <div class="security-dual-grid reveal" role="tablist" aria-label="Explore the two security domains">
+          <button type="button" class="security-domain-card active" id="security-enterprise-tab" role="tab" aria-controls="security-explorer" aria-selected="true" data-security-plane="enterprise" tabindex="0">
+            <span class="security-domain-top"><span class="security-domain-number">01 / ENTERPRISE SECURITY</span><span class="security-domain-glyph" aria-hidden="true">⬡</span></span>
+            <strong data-t="security.enterprise.title">Protect the business</strong>
+            <span class="security-domain-description" data-t="security.enterprise.desc">Coordinate security investigations, defensive workflows and authorized remediation across identity, cloud, infrastructure and business systems.</span>
+            <span class="security-domain-tags"><span>IDENTITY</span><span>CLOUD</span><span>SECOPS</span><span>RESPONSE</span></span>
+            <span class="security-domain-bottom"><span data-t="security.enterprise.action">Explore enterprise security</span><span aria-hidden="true">↗</span></span>
+          </button>
+          <button type="button" class="security-domain-card" id="security-agents-tab" role="tab" aria-controls="security-explorer" aria-selected="false" data-security-plane="agents" tabindex="-1">
+            <span class="security-domain-top"><span class="security-domain-number">02 / AGENT SECURITY</span><span class="security-domain-glyph" aria-hidden="true">◇</span></span>
+            <strong data-t="security.agents.title">Protect the AI operators</strong>
+            <span class="security-domain-description" data-t="security.agents.desc">Treat agents as non-human identities: constrain tool permissions, verify provenance, separate trust boundaries and preserve evidence of execution.</span>
+            <span class="security-domain-tags"><span>AGENT IAM</span><span>MCP / A2A</span><span>POLICY</span><span>AUDIT</span></span>
+            <span class="security-domain-bottom"><span data-t="security.agents.action">Explore agent security</span><span aria-hidden="true">↗</span></span>
+          </button>
+        </div>
+        <div class="security-explorer reveal" id="security-explorer" role="tabpanel" aria-labelledby="security-enterprise-tab">
+          <div class="security-explorer-header">
+            <div><span class="security-live-indicator"><span class="pulse-dot"></span> <span data-t="security.sim">INTERACTIVE THREAT SCENARIOS</span></span><h3 id="security-explorer-title">Protect enterprise operations</h3><p id="security-explorer-subtitle">Choose a threat example to examine potential control boundaries.</p></div>
+            <span class="security-concept-tag">REFERENCE DESIGN / NO LIVE DETECTION</span>
+          </div>
+          <div class="security-threats" aria-label="Select an illustrative threat scenario">
+            <button type="button" class="security-threat active" data-security-case="0" aria-pressed="true">Privilege misuse</button>
+            <button type="button" class="security-threat" data-security-case="1" aria-pressed="false">Configuration drift</button>
+            <button type="button" class="security-threat" data-security-case="2" aria-pressed="false">Incident response</button>
+          </div>
+          <div class="security-path" role="group" aria-label="Conceptual threat-to-control sequence">
+            <div class="security-path-node threat">
+              <span class="security-node-number">01 / SECURITY SIGNAL</span><span class="security-node-icon" aria-hidden="true">!</span>
+              <strong id="security-signal-title">Suspicious privilege change</strong><p id="security-signal-body">A privileged identity change is proposed inside the enterprise.</p>
+            </div>
+            <div class="security-path-connector" aria-hidden="true"><span>→</span></div>
+            <div class="security-path-node gate">
+              <span class="security-node-number">02 / POLICY GATE</span><span class="security-node-icon" aria-hidden="true">◇</span>
+              <strong id="security-gate-title">Verify authorization</strong><p id="security-gate-body">Validate the acting identity, policy conditions and elevated approval requirements.</p>
+            </div>
+            <div class="security-path-connector" aria-hidden="true"><span>→</span></div>
+            <div class="security-path-node outcome">
+              <span class="security-node-number">03 / CONTROLLED RESPONSE</span><span class="security-node-icon" aria-hidden="true">✓</span>
+              <strong id="security-outcome-title">Hold and record</strong><p id="security-outcome-body">Require approval before execution and retain an auditable decision record.</p>
+            </div>
+          </div>
+          <div class="security-explorer-bottom">
+            <div><span class="security-counter-label">02 / SECURITY DOMAINS</span><span class="security-counter-label">06 / ILLUSTRATIVE THREATS</span><span class="security-counter-label">05 / CONTROL BOUNDARIES</span></div>
+            <p id="security-explorer-disclaimer">Conceptual response, not a real detected event or a claim that the controls are already deployed.</p>
+          </div>
+        </div>
+        <div class="security-principle reveal"><span class="security-principle-mark" aria-hidden="true">◈</span><div><strong data-t="security.principle.title">Security by construction. Accountability by default.</strong><p data-t="security.principle.body">Enterprise defense and agent protection must converge at identity, authorization, controlled execution and observable outcomes. Architecture first; capabilities verified before customer claims.</p></div><a href="#governance" class="text-link" data-t="security.principle.cta">Explore controls ↗</a></div>
+      </div>
+    </section>
     <section class="section shell" id="platform">
       <div class="section-heading reveal"><span class="section-kicker">02 — THE PLATFORM</span><div class="heading-row"><h2 data-t="platform.title">From fragmented AI to <em>coordinated intelligence.</em></h2><p data-t="platform.desc">Not another disconnected assistant. A unified operating architecture for how agents reason, access context, request permission, and execute work.</p></div></div>
       <div class="platform-layout reveal">
