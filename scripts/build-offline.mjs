@@ -27,7 +27,11 @@ function buildStandalone(page, moduleFile, extraCSS, outputName) {
   html = html.replaceAll('href="index.html','href="daedoryx-landing-offline.html');
   html = html.replaceAll('href="privacy.html','href="privacy-offline.html');
   html = html.replace('</head>','<style>\n' + baseCSS + '\n' + extraCSS + '\n</style>\n</head>');
-  html = html.replace('</body>','<script>\n' + code + '\n</script>\n</body>');
+  html = html.replace('</body>',() => '<script>\n' + code + '\n</script>\n</body>');
+  const scriptStart = html.indexOf('<script>') + '<script>'.length;
+  const scriptEnd = html.indexOf('</script>', scriptStart);
+  if (scriptStart < '<script>'.length || scriptEnd < 0) throw new Error('No embedded script in '+outputName);
+  new vm.Script(html.slice(scriptStart,scriptEnd),{filename:outputName+' inline'});
   write(outputName,html);
   if (!html.includes('<script>') || html.includes('src="'+moduleFile+'"')) throw new Error('Standalone bundle failed for '+outputName);
   return html.length;
