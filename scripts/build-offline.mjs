@@ -16,11 +16,18 @@ function buildStandalone(page, moduleFile, extraCSS, outputName) {
   let app = read(moduleFile).replace(moduleImports,'');
   if (app === read(moduleFile)) throw new Error('Module import was not removed for '+moduleFile);
   app = app.replaceAll("'present.html?'", "'daedoryx-presentation-offline.html?'");
-  const code = model + '\n' + app;
+  const hasSecurity = page === 'index.html';
+  const security = hasSecurity ? read('security.mjs') : '';
+  const code = model + '\n' + app + '\n' + security;
   new vm.Script(code,{filename:outputName});
   const originalScript = '<script type="module" src="' + moduleFile + '"></script>';
   if (!html.includes(originalScript)) throw new Error('Missing application script in '+page);
   html = html.replace(originalScript,'');
+  if (hasSecurity) {
+    const securityScript = '<script type="module" src="security.mjs"></script>';
+    if (!html.includes(securityScript)) throw new Error('Missing security explorer script');
+    html = html.replace(securityScript,'');
+  }
   html = html.replace(/<link rel="stylesheet" href="styles\.css"\s*\/>/g,'');
   html = html.replace(/<link rel="stylesheet" href="presentation\.css"\s*\/>/g,'');
   html = html.replaceAll('href="present.html','href="daedoryx-presentation-offline.html');
@@ -50,7 +57,7 @@ write('README-OFFLINE.txt',[
   '',
   '1. Unzip the archive, keeping all the files together.',
   '2. Open daedoryx-landing-offline.html in Chrome, Edge, Safari or Firefox.',
-  '3. Open daedoryx-presentation-offline.html for the 8-slide event deck.',
+  '3. Open daedoryx-presentation-offline.html for the 10-slide event deck.',
   '4. The landing can transfer a customized executive scenario to the deck.',
   '5. Use arrow keys, F for fullscreen, P for print/save as PDF.',
   '6. No live backend, metrics service, account system or lead delivery exists.',
