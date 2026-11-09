@@ -19,6 +19,8 @@ jobs:
         run: |
           node --check model.mjs
           node --check app.mjs
+          node --check demo-policy.js
+          node --check demo.js
           node --check present.mjs
           node --check scripts/validate-site.mjs
       - name: Run calculation tests
@@ -27,6 +29,11 @@ jobs:
         run: node scripts/validate-site.mjs
       - name: Build offline event package
         run: node scripts/build-offline.mjs
+      - name: Assert interactive offline demo is bundled
+        run: |
+          test -s offline/daedoryx-lab-offline.html
+          grep -q 'SIMULATED' offline/daedoryx-lab-offline.html
+          if grep -q 'src="demo.js"' offline/daedoryx-lab-offline.html; then exit 1; fi
       - name: Upload offline event package
         uses: actions/upload-artifact@v4
         with:
