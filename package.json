@@ -1,0 +1,12 @@
+{
+  "name": "daedoryx-landing",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "description": "DAEDORYX static executive marketing and event landing",
+  "scripts": {
+    "test": "node --test tests/*.test.mjs",
+    "check": "node --check model.mjs && node --check app.mjs && node --check present.mjs && node --check scripts/validate-site.mjs && node --test tests/*.test.mjs && node scripts/validate-site.mjs",
+    "offline": "node scripts/build-offline.mjs"
+  }
+}
