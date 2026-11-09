@@ -2,16 +2,18 @@
 
 ![DAEDORYX preview artwork](social-card.svg)
 
-A static, animated marketing website and an interactive, eight-slide executive event presentation for DAEDORYX.
+A static, animated marketing website and an interactive, ten-slide executive event presentation for DAEDORYX. The core proposition has two security domains: enterprise security operations and security for autonomous AI agents.
 
 **Status: pre-publication preview.** Product architecture is conceptual and commercial availability is not confirmed. Business-impact statistics are **scenario calculations**, not outcomes measured at DAEDORYX or its customers.
 
 ## What is included
 
 - Premium responsive dark-first landing with interactive agentic architecture map.
+- **Two security domains:** enterprise security (identity, cloud, incident workflows) and agent security (non-human identities, policy-constrained tools, prompt injection, restricted data egress).
+- A bilingual interactive security-threat explorer featuring six hypothetical threats and reference control responses. No live threat detection or policy enforcement.
 - Executive Impact Studio with five C-suite perspectives: CEO, CFO, CIO, CTO, and CISO.
 - Six adjustable model assumptions and dynamically updated charts / metrics.
-- Dedicated event presentation with eight slides, fullscreen, keyboard navigation, browser print/PDF, and shared scenario assumptions.
+- Dedicated event presentation with ten slides, including one slide per security domain, fullscreen, keyboard navigation, browser print/PDF, and shared scenario assumptions.
 - Two-language headline/section switching (English default, Spanish option). Deep technical copy is currently English.
 - Policy-first architectural narrative, realistic deployment positioning, accessible motion reduction, and visible pre-launch restrictions.
 - Contact enquiry generator: **local clipboard only**, no backend API, no claim of lead capture.
@@ -68,6 +70,7 @@ See [scenario methodology](docs/scenario-methodology.md) for reproducible formul
 | `index.html` | Main B2B landing and impact studio |
 | `styles.css` | Design system, layout and responsive behavior |
 | `app.mjs` | Landing interactions, language toggle, clipboard-only enquiry |
+| `security.mjs` | Dual-domain threat examples and bilingual interactive security-control explorer |
 | `model.mjs` | Pure financial scenario computation |
 | `present.html` | Event deck |
 | `presentation.css` | Fullscreen/print deck styling |
