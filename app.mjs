@@ -161,7 +161,9 @@ function updateScenario() {
   $('scenario-hours').textContent = formatInteger(s.scenarioMonthlyHours) + ' h';
   $('baseline-bar').style.width = '100%';
   $('scenario-bar').style.width = (100 - s.shareReleased) + '%';
-  $('workload-caption').textContent = formatInteger(s.releasedMonthlyHours) + ' hours / month potentially released';\n  const shareLink = $('send-to-deck');\n  if (shareLink) shareLink.href = 'present.html?' + new URLSearchParams(s.assumptions).toString() + '#slide-4';
+  $('workload-caption').textContent = formatInteger(s.releasedMonthlyHours) + ' hours / month potentially released';
+  const shareLink = $('send-to-deck');
+  if (shareLink) shareLink.href = 'present.html?' + new URLSearchParams(s.assumptions).toString() + '#slide-4';
   for (const button of document.querySelectorAll('.exec-tab')) {
     const selected = button.dataset.lens === activeLens;
     button.classList.toggle('active',selected);
